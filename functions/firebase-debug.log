@@ -1,0 +1,148 @@
+[debug] [2022-06-23T10:30:35.226Z] ----------------------------------------------------------------------
+[debug] [2022-06-23T10:30:35.255Z] Command:       /root/.nvm/versions/node/v16.14.2/bin/node /usr/local/bin/firebase emulators:start --only functions --debug
+[debug] [2022-06-23T10:30:35.256Z] CLI Version:   11.1.0
+[debug] [2022-06-23T10:30:35.256Z] Platform:      linux
+[debug] [2022-06-23T10:30:35.257Z] Node Version:  v16.14.2
+[debug] [2022-06-23T10:30:35.263Z] Time:          Thu Jun 23 2022 12:30:35 GMT+0200 (hora de verano de Europa central)
+[debug] [2022-06-23T10:30:35.264Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-06-23T10:30:35.331Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-06-23T10:30:35.332Z] > authorizing via signed-in user (manu1022@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2022-06-23T10:30:35.358Z] [hub] writing locator at /tmp/hub-spoti-calendar.json
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, hosting, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, hosting, pubsub, storage\u001b[22m"}}
+[info] ✔  functions: Using node@16 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Using node@16 from host."}}
+[debug] [2022-06-23T10:30:36.367Z] defaultcredentials: writing to file /root/.config/firebase/manu1022_gmail_com_application_default_credentials.json
+[debug] [2022-06-23T10:30:36.374Z] Setting GAC to /root/.config/firebase/manu1022_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /root/.config/firebase/manu1022_gmail_com_application_default_credentials.json"}}
+[debug] [2022-06-23T10:30:36.380Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/spoti-calendar/adminSdkConfig [none]
+[debug] [2022-06-23T10:30:36.809Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/spoti-calendar/adminSdkConfig 200
+[debug] [2022-06-23T10:30:36.810Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/spoti-calendar/adminSdkConfig {"projectId":"spoti-calendar","databaseURL":"https://spoti-calendar-default-rtdb.europe-west1.firebasedatabase.app","storageBucket":"spoti-calendar.appspot.com","locationId":"europe-west"}
+[debug] [2022-06-23T10:30:36.876Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2022-06-23T10:30:36.877Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2022-06-23T10:30:36.878Z] Starting Emulator UI with command {"binary":"node","args":["--dns-result-order=ipv4first","/root/.cache/firebase/emulators/ui-v1.7.0/server.bundle.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"--dns-result-order=ipv4first\",\"/root/.cache/firebase/emulators/ui-v1.7.0/server.bundle.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2022-06-23T10:30:38.245Z] Web / API server started at 127.0.0.1:3001
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:3001\n"}}
+[info] i  functions: Watching "/mnt/c/vite/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/mnt/c/vite/functions\" for Cloud Functions..."}}
+[debug] [2022-06-23T10:30:38.405Z] Validating nodejs source
+[debug] [2022-06-23T10:30:42.325Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "tslint --project tsconfig.json",
+    "build": "tsc",
+    "serve": "npm run build && firebase emulators:start --only functions --debug",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "firebase-admin": "^8.10.0",
+    "firebase-functions": "^3.21.2",
+    "querystring": "^0.2.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0",
+    "tslint": "^5.12.0",
+    "typescript": "^3.8.0"
+  },
+  "private": true
+}
+[debug] [2022-06-23T10:30:42.328Z] Building nodejs source
+[debug] [2022-06-23T10:30:42.329Z] Analyzing nodejs backend spec
+[debug] [2022-06-23T10:30:42.331Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-06-23T10:30:43.936Z] Serving at port 9005
+
+[debug] [2022-06-23T10:30:44.235Z] Got response from /__/functions.yaml Failed to generate manifest from function source: TypeError: Cannot read properties of undefined (reading 'id')
+[debug] [2022-06-23T10:30:44.340Z] Failed to parse functions.yamlincomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line at line 1, column 60:
+     ...  from function source: TypeError: Cannot read properties of unde ... 
+                                         ^ {"name":"YAMLException","reason":"incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line","mark":{"name":null,"buffer":"Failed to generate manifest from function source: TypeError: Cannot read properties of undefined (reading 'id')\n\u0000","position":59,"line":0,"column":59},"message":"incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line at line 1, column 60:\n     ...  from function source: TypeError: Cannot read properties of unde ... \n                                         ^"}
+[debug] [2022-06-23T10:30:44.435Z] shutdown requested via /__/quitquitquit
+
+[info] i  emulators: Shutting down emulators. {"metadata":{"emulator":{"name":"hub"},"message":"Shutting down emulators."}}
+[info] i  ui: Stopping Emulator UI {"metadata":{"emulator":{"name":"ui"},"message":"Stopping Emulator UI"}}
+[warn] ⚠  Emulator UI has exited upon receiving signal: SIGINT 
+[info] i  functions: Stopping Functions Emulator {"metadata":{"emulator":{"name":"functions"},"message":"Stopping Functions Emulator"}}
+[info] i  hub: Stopping emulator hub {"metadata":{"emulator":{"name":"hub"},"message":"Stopping emulator hub"}}
+[info] i  logging: Stopping Logging Emulator {"metadata":{"emulator":{"name":"logging"},"message":"Stopping Logging Emulator"}}
+[error] 
+[error] Error: Failed to load function definition from source: Failed to generate manifest from function source: TypeError: Cannot read properties of undefined (reading 'id')
+[debug] [2022-06-23T10:36:45.448Z] ----------------------------------------------------------------------
+[debug] [2022-06-23T10:36:45.454Z] Command:       /root/.nvm/versions/node/v16.14.2/bin/node /usr/local/bin/firebase emulators:start --only functions --debug
+[debug] [2022-06-23T10:36:45.455Z] CLI Version:   11.1.0
+[debug] [2022-06-23T10:36:45.456Z] Platform:      linux
+[debug] [2022-06-23T10:36:45.456Z] Node Version:  v16.14.2
+[debug] [2022-06-23T10:36:45.456Z] Time:          Thu Jun 23 2022 12:36:45 GMT+0200 (hora de verano de Europa central)
+[debug] [2022-06-23T10:36:45.457Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-06-23T10:36:45.527Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-06-23T10:36:45.528Z] > authorizing via signed-in user (manu1022@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2022-06-23T10:36:45.554Z] [hub] writing locator at /tmp/hub-spoti-calendar.json
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, hosting, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, hosting, pubsub, storage\u001b[22m"}}
+[info] ✔  functions: Using node@16 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Using node@16 from host."}}
+[debug] [2022-06-23T10:36:46.481Z] defaultcredentials: writing to file /root/.config/firebase/manu1022_gmail_com_application_default_credentials.json
+[debug] [2022-06-23T10:36:46.510Z] Setting GAC to /root/.config/firebase/manu1022_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /root/.config/firebase/manu1022_gmail_com_application_default_credentials.json"}}
+[debug] [2022-06-23T10:36:46.518Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/spoti-calendar/adminSdkConfig [none]
+[debug] [2022-06-23T10:36:46.823Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/spoti-calendar/adminSdkConfig 200
+[debug] [2022-06-23T10:36:46.823Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/spoti-calendar/adminSdkConfig {"projectId":"spoti-calendar","databaseURL":"https://spoti-calendar-default-rtdb.europe-west1.firebasedatabase.app","storageBucket":"spoti-calendar.appspot.com","locationId":"europe-west"}
+[debug] [2022-06-23T10:36:46.866Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2022-06-23T10:36:46.867Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2022-06-23T10:36:46.867Z] Starting Emulator UI with command {"binary":"node","args":["--dns-result-order=ipv4first","/root/.cache/firebase/emulators/ui-v1.7.0/server.bundle.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"--dns-result-order=ipv4first\",\"/root/.cache/firebase/emulators/ui-v1.7.0/server.bundle.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2022-06-23T10:36:47.879Z] Web / API server started at 127.0.0.1:3001
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:3001\n"}}
+[info] i  functions: Watching "/mnt/c/vite/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/mnt/c/vite/functions\" for Cloud Functions..."}}
+[debug] [2022-06-23T10:36:48.037Z] Validating nodejs source
+[debug] [2022-06-23T10:36:51.269Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "tslint --project tsconfig.json",
+    "build": "tsc",
+    "serve": "npm run build && firebase emulators:start --only functions --debug",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "firebase-admin": "^8.10.0",
+    "firebase-functions": "^3.21.2",
+    "querystring": "^0.2.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0",
+    "tslint": "^5.12.0",
+    "typescript": "^3.8.0"
+  },
+  "private": true
+}
+[debug] [2022-06-23T10:36:51.272Z] Building nodejs source
+[debug] [2022-06-23T10:36:51.272Z] Analyzing nodejs backend spec
+[debug] [2022-06-23T10:36:51.276Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-06-23T10:36:52.518Z] Serving at port 9005
+
+[debug] [2022-06-23T10:36:52.666Z] Got response from /__/functions.yaml Failed to generate manifest from function source: TypeError: Cannot read properties of undefined (reading 'id')
+[debug] [2022-06-23T10:36:52.672Z] Failed to parse functions.yamlincomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line at line 1, column 60:
+     ...  from function source: TypeError: Cannot read properties of unde ... 
+                                         ^ {"name":"YAMLException","reason":"incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line","mark":{"name":null,"buffer":"Failed to generate manifest from function source: TypeError: Cannot read properties of undefined (reading 'id')\n\u0000","position":59,"line":0,"column":59},"message":"incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line at line 1, column 60:\n     ...  from function source: TypeError: Cannot read properties of unde ... \n                                         ^"}
+[debug] [2022-06-23T10:36:52.704Z] shutdown requested via /__/quitquitquit
+
+[info] i  emulators: Shutting down emulators. {"metadata":{"emulator":{"name":"hub"},"message":"Shutting down emulators."}}
+[info] i  ui: Stopping Emulator UI {"metadata":{"emulator":{"name":"ui"},"message":"Stopping Emulator UI"}}
+[warn] ⚠  Emulator UI has exited upon receiving signal: SIGINT 
+[info] i  functions: Stopping Functions Emulator {"metadata":{"emulator":{"name":"functions"},"message":"Stopping Functions Emulator"}}
+[info] i  hub: Stopping emulator hub {"metadata":{"emulator":{"name":"hub"},"message":"Stopping emulator hub"}}
+[info] i  logging: Stopping Logging Emulator {"metadata":{"emulator":{"name":"logging"},"message":"Stopping Logging Emulator"}}
+[error] 
+[error] Error: Failed to load function definition from source: Failed to generate manifest from function source: TypeError: Cannot read properties of undefined (reading 'id')

@@ -1,0 +1,30 @@
+.window {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 3rem 3rem
+}
+
+.navbar {
+    width: 100%;
+}
+
+.profileImg {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+}
+
+.userLinkBox {
+    margin-top: 5rem;
+}
+
+.userLinkInput {
+    width: 100%;
+    padding: .3rem;
+}
+
+.submitUserButton{
+    width: 100%;
+}

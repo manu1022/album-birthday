@@ -4,5 +4,4 @@ admin.initializeApp()
 const auth = admin.auth()
 const db = admin.firestore();
 const messaging = admin.messaging()
-
 export { auth, db, messaging }

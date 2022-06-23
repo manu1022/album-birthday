@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { AppWithAuth as App } from './components/App';
+import { Firebase, FirebaseContext } from './components/Firebase';
 // import * as serviceWorker from './serviceWorker';
 // import './global.css'
 
@@ -20,7 +21,9 @@ import { AppWithAuth as App } from './components/App';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <App />
+    <FirebaseContext.Provider value={Firebase()}>
+      <App />
+    </FirebaseContext.Provider>
   </React.StrictMode>
 )
 

@@ -20,7 +20,8 @@ import Spinner from 'react-bootstrap/Spinner'
 import { SessionObject, doRefreshToken } from '../Session/useSession';
 import { ApiProfile } from '../Types/UserProfile';
 
-
+import { getApp } from "firebase/app";
+import { getFunctions, connectFunctionsEmulator, httpsCallable } from "firebase/functions";
 
 function useQuery() {
 
@@ -46,20 +47,31 @@ const LoginWithCode: React.FC = () => {
                 code,
                 devMode
             }
-            console.log("funciones", firebase)
-            // const loginWithCode = firebase.functions.httpsCallable('loginWithCode')
-            // try {
-            //     const result = await loginWithCode(loginPayload)
-            //     const { success, customToken } = result.data
-            //     if (success && customToken) {
-            //         firebase.auth.signInWithCustomToken(customToken)
-            //     } else {
-            //         setLoginFailed(true)
-            //     }
-            // }
-            // catch (error) {
-            //     console.log(error)
-            // }
+
+            const functions = getFunctions(getApp());
+            console.log("🚀 ~ file: App.tsx ~ line 52 ~ doLogin ~ functions", functions)
+            connectFunctionsEmulator(functions, "localhost", 5001);
+
+
+            const loginWithCode = httpsCallable(functions,'loginWithCode')
+            try {
+                console.log("TRY")
+                const result = await loginWithCode(loginPayload)
+                console.log("🚀 ~ file: App.tsx ~ line 60 ~ doLogin ~ result", result)
+
+
+
+                // const { success, customToken } = result.data
+                // if (success && customToken) {
+                //     firebase.auth.signInWithCustomToken(customToken)
+                // } else {
+                //     setLoginFailed(true)
+                // }
+
+            }
+            catch (error) {
+                console.log(error)
+            }
         }
         doLogin()
     }, [query, firebase])
@@ -106,7 +118,7 @@ const LoginScreen: React.FC = () => {
 
     return (
         <div className={styles.window}>
-            <Button href={spotifyLoginUrl} target="_blank" variant="success">Login with Spotify</Button>
+            <Button href={spotifyLoginUrl} variant="success">Login with Spotify</Button>
         </div>
     )
 }
@@ -158,7 +170,6 @@ const AppWithAuth: React.FC = () => {
 
 
     useEffect(() => {
-        console.log("use effect")
         // unsubscribe to the profile listener when unmounting
         let unsubscribeProfileDoc = () => { }
 

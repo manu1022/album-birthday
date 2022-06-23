@@ -19,6 +19,7 @@ const doRefreshTokenCF = functions.https.onCall(async (data, context) => {
 
 const doRefreshToken = async (uid: string) => {
     try {
+        console.log("dorefreshtoken")
         // Retrieve refresh token
         const apiData = (await db.collection('users').doc(uid).collection('sensitive').doc('api').get()).data() as ApiProfile
         const { accessToken, refreshToken, tokenExpiryMs } = apiData

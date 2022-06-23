@@ -5,13 +5,16 @@ import * as querystring from 'querystring'
 import { CLIENT_ID, CLIENT_SECRET, SPOTIFY_REDIRECT_URL, DEV_SPOTIFY_REDIRECT_URL } from './config';
 import { db, auth } from '../Firebase';
 
+
+console.log("DATA en funciones1");
+
 const loginWithCode = functions.https.onCall(async (data, context) => {
     // Check for error or code
     const { code, devMode } = data
 
     const redirectUri = devMode ? DEV_SPOTIFY_REDIRECT_URL : SPOTIFY_REDIRECT_URL
 
-    console.log("DATA", data);
+    console.log("DATA en funciones", data);
 
     try {
         // Retrieve access and refresh tokens
@@ -40,7 +43,8 @@ const loginWithCode = functions.https.onCall(async (data, context) => {
             headers: { 'Authorization': 'Bearer ' + access_token },
         }
         const retrieveIdResult = (await axios.request(retrieveIdPayload)).data
-        const { display_name, email, external_urls, id, images } = retrieveIdResult
+        // const { display_name, email, external_urls, id, images } = retrieveIdResult
+        const { display_name, email, external_urls, id } = retrieveIdResult
 
         // Locate existing user profile in Firestore
         const existingUserQuery = await db.collection('users').where('token', '==', id).get()
@@ -59,11 +63,12 @@ const loginWithCode = functions.https.onCall(async (data, context) => {
 
         // Update user profile
         const newProfileData = {
-            uid,
-            id,
-            name: display_name,
-            urls: external_urls,
-            images,
+            token: uid,
+            // id,
+            // name: display_name,
+            email: email
+            // urls: external_urls,
+            // images,
         }
         await db.collection('users').doc(uid).set(newProfileData)
 

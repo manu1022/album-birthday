@@ -35,7 +35,7 @@ export interface ApiProfile extends User {
 
 
 const transformSpotifyProfile = (spotifyProfile: any) => {
-    console.log("transformSpotify")
+    console.log("transformSpotify", spotifyProfile)
     return {
         ...spotifyProfile,
         urls: spotifyProfile.external_urls,
